@@ -1,0 +1,41 @@
+﻿<Window x:Class="HogerLager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HogerLager"
+        mc:Ignorable="d"
+        Title="Hoger Lager" Height="350" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+        <Label Content="{Binding CurrentCard}" FontSize="20" Name="CurrentCard" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Button Content="Hoger" Name="HigherButton" Grid.Row="0" Grid.Column="1" Margin="10" IsEnabled="{Binding ButtonEnabled}"/>
+        <Button Content="Lager" Name="LowerButton" Grid.Row="1" Grid.Column="1" Margin="10" IsEnabled="{Binding ButtonEnabled}"/>
+
+
+        <Label Content="{Binding CardListString}" Name="NumberList" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+        <Label Content="Score" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Content="{Binding Score}" Name="Score" Grid.Row="4" Grid.Column="0" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Button Content="Nieuw spel" Name="NewGameButton" Grid.Row="4" Grid.Column="1" Margin="10"/>
+        <Button Content="Sorteer lijst ASC" Name="SortCardListASC" Grid.Row="5" Grid.Column="0" Margin="10"/>
+        <Button Content="Sorteer lijst DESC" Name="SortCardListDESC" Grid.Row="5" Grid.Column="1" Margin="10"/>
+        <Button Content="Upload score" Name="UploadScore" Grid.Row="6" Grid.Column="1" Margin="10" IsEnabled="{Binding UploadButtonEnabled}"/>
+    </Grid>
+</Window>
